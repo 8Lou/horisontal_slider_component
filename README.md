@@ -1,5 +1,3 @@
-# Getting Started with Create React App
+# https://8lou.github.io/horisontal_slider_component/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+This is a small job of repeating the layout and vanilla JavaScript.
