@@ -84,12 +84,12 @@ input[type="range"]::-moz-range-thumb{
     left: 50%;
     transform: translateX(-50%) translateY(-100%);
     z-index: 5;
-    margin-bottom: 16px;
+    margin-bottom: 0;
 }
 .max-tooltip{
     right: 50%;
     transform: translateX(50%) translateY(-100%);
-    margin-bottom: 16px;
+    margin-bottom: 0;
 }
 .input-box{
     display: flex;
