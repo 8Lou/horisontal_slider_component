@@ -14,9 +14,10 @@
         <div class="range-slider">
                 <span class="slider-track"></span>
                 <input type="range" name="min_val" class="min_val"
-                min="0" max="1500" value="100"id="">
+                min="0" max="1500" value="100" id="" oninput="slideMin()">
+
                 <input type="range" name="max_val" class="max_val"
-                min="0" max="1500" value="1480"id="">
+                min="0" max="1500" value="1480" id="" oninput="slideMax()">
                 <div class="tooltip min-tooltip"></div>
                 <div class="tooltip max-tooltip"></div>
             </div>
@@ -24,13 +25,13 @@
                 <div class="min-box">
                     <div class="input-wrap">
                         <span class="input-addon">₽</span>
-                        <input type="text" name="min_input" class="input-field min-input">
+                        <input type="text" name="min_input" class="input-field min-input" onchange="setMinInput()">
                     </div>
                 </div>
                 <div class="max-box">
                     <div class="input-wrap">
                         <span class="input-addon">₽</span>
-                        <input type="text" name="max_input" class="input-field max-input">
+                        <input type="text" name="max_input" class="input-field max-input" onchange="setMaxInput()">
                     </div>
                 </div>
             </div>

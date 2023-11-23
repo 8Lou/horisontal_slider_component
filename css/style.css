@@ -19,11 +19,12 @@ body{
 .double-slider-box{
     background-color: #1F1F1F;
     padding: 20px 40px;  
-    border-radius: 30px; 
-    max-width: 20rem; 
+    /* border-radius: 30px;  */
+    max-width: 200px; 
 }
 h3.range-title{
 margin-bottom: 10rem;
+color: #FDC840;
 }
 .range-slider{
     position: relative;
@@ -33,9 +34,9 @@ margin-bottom: 10rem;
     background-color: rgb(231, 159, 64);
 }
 .slider-track{
-    /* width: 210px; */
-    /* height: 12px; */
-    width: 100%;
+    width: 200px;
+    height: 12px;
+    /* width: 100%; */
     position: absolute;
     background-color: #FDC840;
     border-radius: 30px;
@@ -136,19 +137,12 @@ white-space: nowrap;
     background-color: #fff;
     background-clip: padding-box;
 }
-/* .wrapper{
-    
-    width: 398px;
-    height: 200px;
-    padding: 94px;
+.input-field:focus{
+    outline: none;
 }
-.container{
-    position: relative;
-    
-}
-.slider-track{
-    
-}
+
+
+/*
 input[type='range']{
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -207,4 +201,3 @@ input[type='range']::-ms-thumb{
     font-weight: 400;
     font-size: 12px;
     /* font-family: Inter; */
-} */

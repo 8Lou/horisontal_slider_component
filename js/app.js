@@ -1,41 +1,56 @@
-window.onload = function() {
-    slideOne();
-    slideTwo();
-}
+const minVal = document.querySelector('.min-val');
+const maxVal = document.querySelector('.max-val');
+const priceInputMin = document.querySelector('.min-input');
+const priceInputMax = document.querySelector('.max-input');
+const minTooltip = document.querySelector('.min-tooltip');
+const maxTooltip = document.querySelector('.max-tooltip');
+const minGap = 0;
+const range = document.querySelector('.slider-track');
+const sliderMinValue = parseInt(minVal.min);
+const sliderMaxValue = parseInt(maxVal.max);
 
-let sliderOne = document.getElementById('slider-1');
-let sliderTwo = document.getElementById('slider-2');
-let displayValOne = document.getElementById('range1');
-let displayValTwo = document.getElementById('range2');
-let minGap = 0;
-let sliderTrack = document.querySelector('.slider-track');
-let sliderMaxValue = document.getElementById('slider-1').max;
-
-
-function slideOne(){
-    if(parseInt(sliderTwo.value) - parseInt
-    (sliderOne.value) <= minGap) {
-        sliderOne.value = parseInt(sliderTwo.value)
-        - minGap;
+function slideMin() {
+    let gap = parseInt(maxVal.value) - parseInt(minVal.value);
+    if (gap <= minGap) {
+        minVal.value = parseInt(maxVal.value) - minGap;
     }
-    displayValOne.textContent = sliderOne.value;  
-    fillColor();
-}
-function slideTwo(){
-    if(parseInt(sliderTwo.value) - parseInt
-    (sliderOne.value) <= minGap) {
-        sliderTwo.value = parseInt(sliderOne.value)
-        + minGap;
-    }
-    displayValTwo.textContent = sliderTwo.value;  
-      fillColor();
+    minTooltip.innerHTML = '₽' +minVal.value;
+    priceInputMin.value =minVal.value;
+    setArea();
 }
 
-function fillColor(){
-    percent1 = (sliderOne.value / sliderMaxValue) * 100;
-    percent2 = (sliderTwo.value / sliderMaxValue) * 100;
-sliderTrack.style.background =
-`linear-gradient(to right, #FDC840 ${percent1}%,
-    #FDC840 ${percent1}%, #FDC840 ${percent2}%,
-    #FDC840 ${percent2}%,)`;
+function slideMax() {
+    let gap = parseInt(maxVal.value) - parseInt(minVal.value);
+    if (gap <= minGap) {
+        maxVal.value = parseInt(minVal.value) - minGap;
+    }
+    maxTooltip.innerHTML = '₽' +maxVal.value;
+    priceInputMax.value =maxVal.value;
+    setArea();
+}
+
+function setArea() {
+    range.style.left = (minVal.value / sliderMaxValue) * 100 + %;
+    minTooltip.style.left = (minVal.value / sliderMaxValue) * 100 + %;
+    range.style.right = 100 - (maxVal.value / sliderMaxValue) * 100 + %;
+    maxTooltip.style.right = 100 - (maxVal.value / sliderMaxValue) * 100 + %;
+    
+}
+
+function setMinInput() {
+    let minPrice = parseInt(priceInputMin.value);
+    if (minPrice < sliderMinValue) {
+        priceInputMin.value = sliderMinValue;
+    }
+    minVal.value = priceInputMin.value;
+    slideMin();
+}
+
+function setMaxInput() {
+    let maxPrice = parseInt(priceInputMax.value);
+    if (maxPrice > sliderMaxValue) {
+        priceInputMax.value = sliderMaxValue;
+    }
+    maxVal.value = priceInputMax.value;
+    slideMax();
 }
